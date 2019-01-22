@@ -8,9 +8,12 @@ We understand there are similiar challenges available on the internet, however p
 
 ### Setup
 
-Prerequisites: Have `npm` installed. [If you don't have npm, you can find instructions on installing it here](https://www.npmjs.com/get-npm).
-
-Make sure you are in the `challenge` directory. Run `npm install` to install the dependecies for this challenge. We are using [mocha](https://mochajs.org/) as the test framework. At this point you should be able to run the command `npm test` and see one failing test in your terminal.
+Prerequisites: 
+1. Have `npm` installed. [If you don't have npm, you can find instructions on installing it here](https://www.npmjs.com/get-npm).
+2. Know what poker is. Find some rules [here](https://www.pokerstars.com/poker/games/rules/?no_redirect=1)
+3. Make sure you are in the `challenge` directory. 
+4. Run `npm install` to install the dependecies for this challenge. We are using [mocha](https://mochajs.org/) as the test framework. 
+5. At this point you should be able to run the command `npm test` and see one failing test in your terminal.
 
 ### Poker Hand Ranker
 
