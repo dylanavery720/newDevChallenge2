@@ -11,11 +11,14 @@ class PokerHand {
 
   rankHand() {
     let hand = this.convertCards(this.hand)
+    let rank;
     if (hand.values.length != 5 || hand.values.includes(undefined)) return 'Invalid Hand'
-    if(this.isFlush(hand)) return this.isFlush(hand)
-    if(this.isStraight(hand.values)) return this.isStraight(hand.values)
-    if(this.isFullHouse(hand)) return this.isFullHouse(hand)  
-    //Try to optimize so that method isn being called twice to return value
+    rank = this.isFlush(hand)
+    if (rank) return rank
+    rank = this.isStraight(hand.values)
+    if (rank) return rank
+    rank = this.isFullHouse(hand) 
+    return rank   
   }
 
   convertCards(hand) {
