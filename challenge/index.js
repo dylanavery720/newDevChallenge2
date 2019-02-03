@@ -5,23 +5,23 @@ class PokerHand {
     this.hand = hand
   }
 
-  sortArray(a, b) {
+  sortHand(a, b) {
     return a - b
   }
 
   rankHand() {
-    let hand = this.convertCards(this.hand)
+    let hand = this.getValues(this.hand)
     let rank;
     if (hand.values.length != 5 || hand.values.includes(undefined)) return 'Invalid Hand'
     rank = this.isFlush(hand)
     if (rank) return rank
     rank = this.isStraight(hand.values)
     if (rank) return rank
-    rank = this.isFullHouse(hand) 
+    rank = this.isOfAKind(hand) 
     return rank   
   }
 
-  convertCards(hand) {
+  getValues(hand) {
     const cards = hand.split(" ")
     let values = []
     let suits = []
@@ -29,11 +29,11 @@ class PokerHand {
       values.push(deck[cards[i].slice(0,1)])
       suits.push(cards[i].slice(-1))
     }
-    values.sort(this.sortArray)
+    values.sort(this.sortHand)
     return {values, suits}
   }
 
-  isFullHouse(hand) {
+  isOfAKind(hand) {
     let cards = this.countCards(hand.values)
     let rank = "High Card"
     for( let count in cards) {
@@ -72,7 +72,7 @@ class PokerHand {
 
   handleAce(values) {
     values[values.indexOf(14)] = 1
-    return values.sort(this.sortArray)
+    return values.sort(this.sortHand)
   }
 
   isFlush(hand) {
